@@ -1,14 +1,8 @@
 var env = process.env.NODE_ENV || 'development'
 console.log("***env:", env)
 
-
-if (env === 'development') {
-    process.env.PORT = 3000;
-    process.env.MONGODB_URI = "mongodb://developer:password777@ds149672.mlab.com:49672/learning-genie-dev";
-}
-else if (env === 'production') {
-    process.env.MONGODB_URI = "mongodb://admin:password777@ds012578.mlab.com:12578/learning-genie";
-}
+process.env.PORT = 3000;
+process.env.MONGODB_URI = "mongodb://developer:password777@ds149672.mlab.com:49672/learning-genie-dev";
 
 process.logger = function (msg, err) {
     if (env === 'development') {
