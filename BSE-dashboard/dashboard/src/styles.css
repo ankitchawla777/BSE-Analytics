@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: lightgrey;
+}
+.glass{
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    color:darkslategrey;
+    z-index: 1;
+	max-width: -webkit-fill-available;
+}
+.row{
+    margin-left:0.5em; 
+    margin-right: 0.5em;
+}

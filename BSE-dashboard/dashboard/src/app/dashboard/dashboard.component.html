@@ -1,0 +1,72 @@
+<div class="table-responsive glass">
+  <h1>Stocks</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Index</th>
+            <th>Date</th>
+            <th>Open</th>
+            <th>Close</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stock of stocks;index as i">
+            <td>{{i + 1 + skip}}</td>
+            <td>{{stock.date | date: 'MM-dd-yyyy'}}</td>
+            <td>{{stock.open}}</td>
+            <td>{{stock.close }}</td>
+          </tr>
+          <tr> 
+              <td>
+                <button class="btn " (click)="addStockBtn(content)">
+                    Add Stock
+                 </button>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <button class="btn " (click)="previous()">
+                    &#x3C; Previous
+                 </button>
+                <button class="btn " (click)="next()">
+                    Next &#x3E;
+                 </button>
+              </td>
+            </tr>
+        </tbody>
+        
+      </table>
+      <fusioncharts
+      width="800"
+      height="500"
+      type="Column2d"
+      [dataSource]="dataSource">
+      </fusioncharts>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New Stock</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label >Opening</label>
+          <div class="input-group">
+            <input id="opening" type="number" class="form-control" required  name="opening" [(ngModel)]="add_Stock.opening">
+          </div>
+          <label >Closing</label>
+          <div class="input-group">
+            <input id="closing" type="number" class="form-control" required  name="closing" [(ngModel)]="add_Stock.closing">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save')">Save</button>
+    </div>
+  </ng-template>
+  
