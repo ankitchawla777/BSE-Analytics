@@ -7,7 +7,7 @@
 
 ---------------Starting Frontend Project-----------------------------------------
 
--> Go to BSE-Portal/dashboard
+-> Go to BSE-dashboard/dashboard
 -> Run command npm install
 -> run command ng-serve
 -. goto localhost:4200
