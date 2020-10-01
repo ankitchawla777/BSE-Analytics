@@ -1,6 +1,5 @@
 const app = require('express')();
 const http = require('http');
-const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const {socket} = require('./app/sockets/sockets.js');
