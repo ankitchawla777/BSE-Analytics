@@ -6,7 +6,7 @@ const apiRoutes = function (router, io) {
     router = Router();
 
     router.get('/',(req,res) => {
-        res.send('Apis are hoted here');
+        res.send('/GET => /stocks\nPOST => /stocks\nGET=> /stocks-analytics');
     })
 
     router.get('/stocks', (req, res) => {
